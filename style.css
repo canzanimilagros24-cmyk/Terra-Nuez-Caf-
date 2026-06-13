@@ -272,38 +272,111 @@ section#menu.productos {
     color: #3d312a !important;
 }
 
-/* Sección de Promociones al pie del menú */
+/* ===================================================
+   DISEÑO MODERNO DE TARJETAS DE PROMOS (REF: 18865.jpg)
+   =================================================== */
 .divisor-secundario {
     border-top: 1px dashed #c3b091 !important;
-    margin: 30px 0 !important;
+    margin: 40px 0 !important;
 }
 
 .carta-promos {
     text-align: center !important;
-}
-
-.promos-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-    gap: 20px !important;
     margin-top: 20px !important;
 }
 
-.promo-box {
-    border: 1px dashed #c3b091 !important;
-    padding: 15px !important;
-    background-color: rgba(255, 251, 244, 0.4) !important;
+/* Grilla para que se acomoden solas una al lado de la otra */
+.promos-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 25px !important;
+    margin-top: 30px !important;
+    padding: 10px !important;
 }
 
-.promo-box h4 {
+/* Estructura de la tarjeta individual */
+.promo-card {
+    background-color: #ffffff !important;
+    border-radius: 16px !important; /* Bordes redondeados suaves de la foto */
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(61, 49, 42, 0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    border: 1px solid rgba(195, 176, 145, 0.2) !important;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 8px 25px rgba(61, 49, 42, 0.12) !important;
+}
+
+/* Contenedor de la foto de la promo */
+.promo-imagen {
+    height: 160px !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative !important;
+}
+
+/* Etiqueta flotante arriba de la foto (ej: 2x1, Imperdible) */
+.promo-badge {
+    position: absolute !important;
+    top: 12px !important;
+    left: 12px !important;
+    background-color: #A6744D !important;
+    color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* Textos dentro de la tarjeta */
+.promo-info {
+    padding: 20px !important;
+    text-align: left !important; /* Alineación limpia */
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+.promo-info h4 {
     font-family: 'Playfair Display', serif !important;
-    color: #6e5341 !important;
-    margin-bottom: 5px !important;
+    font-size: 19px !important;
+    color: #3d312a !important;
+    margin-bottom: 8px !important;
 }
 
-.promo-box p {
-    font-size: 12px !important;
+.promo-descripcion {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
     color: #66554c !important;
+    line-height: 1.5 !important;
+    margin-bottom: 15px !important;
+    flex-grow: 1 !important;
+}
+
+/* Contenedor de precios destacados */
+.promo-precio-caja {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+}
+
+.precio-viejo {
+    font-size: 13px !important;
+    color: #a18e83 !important;
+    text-decoration: line-through !important; /* Tachado decorativo */
+}
+
+.precio-nuevo {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #A6744D !important;
 }
 
 /* ===================================================
@@ -335,4 +408,82 @@ footer h2 {
     padding-top: 20px;
     font-size: 12px;
     color: #aaa;
+}
+/* ===================================================
+   CARTA MENÚ: ESTILO TARJETAS GRANDES CON FOTOS
+   =================================================== */
+
+/* Contenedor vertical de todas las categorías */
+.carta-cuerpo-moderno {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    width: 100% !important;
+}
+
+/* Bloque por cada sección (Café, Salado, etc.) */
+.categoria-bloque {
+    text-align: left !important;
+    width: 100% !important;
+}
+
+.categoria-bloque .tipografia-cursiva {
+    margin-bottom: 20px !important;
+    border-bottom: 1px solid rgba(195, 176, 145, 0.4) !important;
+    padding-bottom: 10px !important;
+}
+
+/* Grilla de productos con foto: 3 columnas en PC, se adapta solo */
+.productos-grid-fotos {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
+}
+
+/* Tarjeta individual de producto */
+.producto-foto-card {
+    background-color: #ffffff !important;
+    border-radius: 12px !important; /* Bordes redondeados como la app de referencia */
+    overflow: hidden !important;
+    box-shadow: 0 4px 10px rgba(61, 49, 42, 0.04) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border: 1px solid rgba(195, 176, 145, 0.15) !important;
+    transition: transform 0.2s ease !important;
+}
+
+.producto-foto-card:hover {
+    transform: scale(1.02) !important; /* Efecto sutil al pasar el mouse */
+}
+
+/* Espacio de la foto del producto */
+.prod-img {
+    height: 180px !important; /* Altura ideal para resaltar el producto */
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* Caja de textos abajo de la foto */
+.prod-detalles {
+    padding: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    flex-grow: 1 !important;
+}
+
+.prod-detalles h4 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #3d312a !important;
+    margin-bottom: 8px !important;
+}
+
+.prod-precio {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #A6744D !important; /* Color marrón destacado para el precio */
+    margin-top: auto !important;
 }
